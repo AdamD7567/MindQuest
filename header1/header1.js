@@ -1,6 +1,7 @@
-function onMenuClick() {
-    let navbar = document.getElementById("navigation-bar");
-    let responsive_class_name = "responsive";
-
-    navbar.classList.toggle(responsive_class_name);
+// Toggle sidebar animation
+function toggleSidebar() {
+    // Get the nav menu
+    let navbar = document.getElementById('navigation-bar');
+    // Toggle the closed class
+    navbar.classList.toggle('closed');
 }
