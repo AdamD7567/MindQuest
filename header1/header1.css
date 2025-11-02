@@ -15,7 +15,7 @@ html {
 }
 
 /********** HEADER STYLING *****/
-.page-header {
+header {
     background-color: rgb(80, 160, 214);
     padding: 1.3rem;
     position: relative;
@@ -89,7 +89,7 @@ html {
 @media screen and (max-width: 1250px) {
 
     /* Left section of header */
-    .page-header {
+    header {
         display: grid;
         grid-template-columns: auto 1fr auto;
         gap: 0.5rem;
