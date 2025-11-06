@@ -1,10 +1,10 @@
+/********** BASE HTML ******************************/
 html {
     overflow-y: scroll;
     height: 100%;
     background-color: rgb(200, 218, 230);
 }
 
-/* Setting margin and padding to 0 for all elements */
 * {
     margin: 0;
     padding: 0;
@@ -14,18 +14,20 @@ html {
     font-style: normal;
 }
 
-/********** HEADER STYLING *****/
+/********** HEADER ******************************/
 header {
+    position: relative;
+    top: 0;
+    z-index: 2000;
     background-color: #89C7E7;
     padding: 1.3rem;
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
 
-/**** LOGO ****/
+/* LOGO */
 .logo {
     align-self: center;
     margin-left: -0.2rem;
@@ -35,18 +37,21 @@ header {
     zoom: 12%;
 }
 
-/**** NAV BAR ****/
+/********** Top navigation (desktop) ******************************/
 .nav-bar {
     margin: auto;
 }
 
-/** Buttons **/
+.nav-bar a {
+    text-decoration: none;
+}
+
+/* Navigation buttons */
 .top-nav-button {
     background: none;
     border: none;
-    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    padding: 0.5rem 1.2rem;
     margin: 0.4rem;
-    text-decoration: none;
     font-size: 1.1rem;
     border-radius: 10px;
     color: #013C58;
@@ -54,24 +59,22 @@ header {
     transition: .4s ease;
 }
 
-.nav-bar a {
-    text-decoration: none;
-}
-
+/* Hover animation */
 .nav-bar a:hover .top-nav-button {
     background-color: #013C58;
     color: white;
     transform: scale(1.2);
 }
 
-/** Hamburger button **/
+/* Hamburger menu button */
 .menu-icon {
+    display: none;
     color: white;
     cursor: pointer;
-    display: none;
+    font-size: 1.5rem;
 }
 
-/** Login button **/
+/* Login button */
 #login {
     font-size: 1.1rem;
     color: white;
@@ -84,110 +87,182 @@ header {
     transition: .4s ease;
 }
 
+/* Login button hover animation */
 #login:hover {
     background-color: #F5A201;
     transform: scale(1.1);
 }
 
-/* HIDE HOME BUTTON WHEN ZOOMING IN */
+/* Hide home button when zooming in */
 @media screen and (max-width: 1500px) {
     .nav-bar a:first-child {
         display: none;
     }
 }
 
-/** RESPONSIVE HEADER **/
-@media screen and (max-width: 1100px) {
-
-    /* Left section of header */
-    header {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: 0.5rem;
+/********** MOBILE HEADER ******************************/
+@media (max-width: 1100px) {
+    #navigation-bar {
+        display: none !important;
     }
 
-    /* Mobile navigation bar view. */
-    .nav-bar {
-        position: absolute;
-        visibility: hidden;
-        top: 100%;
-        left: -100%;
-        width: 20vw;
-        height: 118vh;
-        background-color: #013C58;
-        transition: 0.5s ease;
-        opacity: 0;
-    }
-
-    /* Hide the navbar by default */
-    .nav-bar.closed {
-        left: -100%;
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    .nav-bar:not(.closed) {
-        left: 0;
-        visibility: visible;
-        opacity: 1;
-    }
-
-    /* Nav bar buttons */
-    .top-nav-button {
-        display: flex;
-        align-items: center;
-        padding: 0 0.75rem;
-        margin: 0;
-        height: 10vh;
-        width: 100%;
-        text-align: left;
-        background-color: #013C58;
-        border-radius: 0;
-        color: white;
-        cursor: pointer;
-        font-size: 1.4vw;
-    }
-
-    .nav-bar a {
-        display: block;
-        width: 100%;
-        text-decoration: none;
-    }
-
-    .nav-bar a:hover .top-nav-button {
-        background-color: #F5A201;
-        transform: translateX(0.5vw);
-        transition: 0.4s ease-in-out;
-    }
-
-
-    /* Login button */
-    #login {
-        padding: 0.9rem;
-        width: 100px;
-    }
-
-    /* Logo */
-    .logo {
-        margin-left: 0.75rem;
-    }
-
-    .logo img {
-        zoom: 10%;
-    }
-
-    /* Hamburger button */
     .menu-icon {
         display: block;
-        font-size: 1.5rem;
-        z-index: 1;
-        border-radius: 5px;
-        transition: 0.4s;
-        margin-left: 0.1rem;
-        margin-bottom: 0.2rem;
     }
 
-    .menu-icon:hover {
+}
+
+/********** SIDEBAR ******************************/
+@media (max-width: 1100px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 270px;
+        height: 100vh;
+        background-color: #013C58;
+        padding: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        z-index: 5000;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+    }
+
+    /* Slide in animation */
+    .sidebar:not(.closed) {
+        transform: translateX(0);
+    }
+
+    /* Close button */
+    #close-button {
+        position: absolute;
+        right: 0.8rem;
+        top: 0.8rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #89C7E7;
         cursor: pointer;
+        transition: .4s ease;
+    }
+
+    #close-button:hover {
+        transform: scale(1.2);
+        color: #F5A201;
+    }
+
+    /* Sidebar header and logo section */
+    .side-header {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+        border-bottom: solid 1px #F5A201;
+    }
+    .side-logo {
+        width: 60px;
+    }
+
+    /* Sidebar title and text section */
+    .side-title h2 {
+        color: white;
+        font-size: 0.8rem;
+    }
+    .side-title p {
+        color: #89C7E7;
+        font-size: 0.6rem;
+        font-weight: 500;
+        margin-top: 0.1rem;
+    }
+
+    /* Sidebar buttons */
+    .side-button {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        padding: 0.8rem 0.4rem;
+        font-size: 0.6rem;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: 0.25s ease;
+    }
+
+    .side-button i {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    /* Sidebar button hover animation */
+    .side-button:hover {
+        background-color: #89C7E7;
+        color: #013C58;
+        transform: translateX(5px);
+    }
+
+    /* Progress Cards section */
+    .side-section h3 {
+        color: #89C7E7;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    .progress-card {
+        display: flex;
+        flex-direction: row;
+        background: #89C7E7;
+        padding: 0.7rem;
+        border-radius: 10px;
+        margin-bottom: 0.9rem;
+        color: #013C58;
+    }
+    .progress-card p {
+        font-size: 0.7rem;
+        margin-bottom: 0.1rem;
+    }
+    .progress-card h2 {
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    /* User card sectiion */
+    .user-card {
+        background: #89C7E7;
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 0.7;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+    }
+    .user-icon {
+        width: 30px;
+        height: 30px;
+        background: #013C58;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+    .user-card h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.1rem;
+    }
+    .user-card p {
+        font-size: 0.6rem;
+        opacity: 0.8;
+    }
+}
+
+/* Hide sidebar on desktop */
+@media screen and (min-width: 1100px) {
+    #sidebar {
+        display: none;
     }
 }
