@@ -19,7 +19,7 @@ header {
     position: relative;
     top: 0;
     z-index: 2000;
-    background-color: #89C7E7;
+    background-color: #54B5B2;
     padding: 1.3rem;
     display: flex;
     justify-content: space-between;
@@ -46,7 +46,7 @@ header {
     background: none;
     border: none;
     padding: 0.5rem 1.2rem;
-    margin: 0.4rem;
+    margin-left: 0.8rem;
     font-size: 1.2rem;
     border-radius: 10px;
     color: #013C58;
@@ -86,6 +86,7 @@ header {
 /* Login button hover animation */
 .login:hover {
     background-color: #F5A201;
+    color: #013C58;
     transform: scale(1.1);
 }
 
@@ -112,7 +113,7 @@ header {
     /* Sidebar wrapper for scaling purposes */
     .sidebar-wrapper {
         position: fixed;
-        width: 250px;
+        width: 200px;
         height: 100vh;
         top: 0;
         left: 0;
@@ -128,7 +129,7 @@ header {
 
     /* Sidebar */
     .sidebar {
-        padding: 1rem;
+        padding: 0.7rem;
         background-color: #013C58;
         display: flex;
         flex-direction: column;
@@ -138,11 +139,11 @@ header {
     #close-button {
         position: absolute;
         right: 1rem;
-        top: 1.25rem;
+        top: 0.7rem;
         background: none;
         border: none;
-        font-size: 1.75rem;
-        color: #89C7E7;
+        font-size: 1.5rem;
+        color: #54B5B2;
         cursor: pointer;
         transition: .4s ease;
         z-index: 20;
@@ -157,8 +158,8 @@ header {
         display: flex;
         align-items: center;
         gap: 1rem;
-        padding-bottom: 1rem;
-        margin-bottom: 0.6rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.1rem;
         border-bottom: solid 1px #F5A201;
     }
 
@@ -174,7 +175,8 @@ header {
 
     .side-title p {
         color: #89C7E7;
-        font-size: 0.5rem;
+        font-size: 0.45rem;
+        font-weight: 500;
     }
 
     /* Sidebar buttons */
@@ -183,7 +185,7 @@ header {
         align-items: center;
         gap: 1rem;
         padding: 0.4rem 0.3rem;
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         color: white;
         text-decoration: none;
         border-radius: 8px;
@@ -194,14 +196,14 @@ header {
 
     .side-button i {
         width: 20px;
-        font-size: 1rem;
+        font-size: 0.8rem;
         text-align: center;
         padding-left: 10px;
     }
 
     /* Sidebar button hover animation */
     .side-button:hover {
-        background-color: #89C7E7;
+        background-color: #54B5B2;
         color: #013C58;
         transform: translateX(5px);
     }
@@ -209,9 +211,9 @@ header {
     /* Card section */
     .side-section h3 {
         color: #89C7E7;
-        margin-top: 1rem;
+        margin-top: 0.6rem;
         margin-bottom: 0.6rem;
-        font-size: 0.75rem;
+        font-size: 0.5rem;
     }
 
     /* Card styling */
@@ -223,7 +225,7 @@ header {
         background: #D1DFD2;
         padding: 0.5rem;
         border-radius: 12px;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
         color: #013C58;
     }
     .streak-card {
@@ -233,31 +235,30 @@ header {
     /* Labels for cards */
     .points-label,
     .streak-label {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
     }
 
     /* Values for cards */
     .points-value,
     .streak-value {
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 700;
     }
 
     /* User card */
     .user-card {
-        background: #89C7E7;
-        padding: 0.5rem;
+        background: #54B5B2;
+        padding: 0.4rem;
         border-radius: 12px;
         display: flex;
         align-items: center;
         gap: 0.9rem;
-        margin-top: auto;
     }
 
     /* User profile icon */
     .user-icon {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         background: #013C58;
         color: white;
         border-radius: 50%;
@@ -270,14 +271,14 @@ header {
     /* Username */
     .user-card h4 {
         color: #013C58;
-        font-size: 0.75rem;
+        font-size: 0.6rem;
         font-weight: 700;
         margin-bottom: 0.1rem;
     }
 
     /* User Level */
     .user-card p {
-        font-size: 0.65rem;
+        font-size: 0.5rem;
         opacity: 0.8;
     }
 }
