@@ -25,7 +25,6 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    height: 8vh;
 }
 
 /* Logo */
@@ -48,11 +47,12 @@ header {
     border: none;
     padding: 0.5rem 1.2rem;
     margin: 0.4rem;
-    font-size: 0.9vw;
+    font-size: 1.2rem;
     border-radius: 10px;
     color: #013C58;
     cursor: pointer;
     transition: .3s ease-out;
+    
 }
 
 /* Hover animation */
@@ -97,7 +97,7 @@ header {
 }
 
 /********** MOBILE HEADER ******************************/
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
     #navigation-bar {
         display: none !important;
     }
@@ -107,7 +107,7 @@ header {
 }
 
 /********** SIDEBAR (For mobile and zoomed desktop) ******************************/
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
 
     /* Sidebar wrapper for scaling purposes */
     .sidebar-wrapper {
@@ -283,7 +283,7 @@ header {
 }
 
 /* Hide sidebar on desktop */
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 900px) {
     #sidebar {
         display: none;
     }
