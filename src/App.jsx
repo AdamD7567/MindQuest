@@ -22,6 +22,7 @@ function App() {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
+    // Navigation between pages
     <Router>
       <Navigation toggleSidebar={toggleSidebar}/>
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar}/>

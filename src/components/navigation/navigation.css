@@ -39,11 +39,6 @@ header {
     transition: .3s ease-out;
 }
 
-/* Remove default link styling for navigation */
-.nav-bar a {
-    text-decoration: none;
-}
-
 /* Hover animation */
 .nav-bar a:hover .top-nav-button {
     background-color: #013C58;
