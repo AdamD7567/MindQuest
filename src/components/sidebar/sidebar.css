@@ -12,7 +12,7 @@
         z-index: 5000;
         padding: 0.5rem;
         color: white;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     /* Open the sidebar when button clicked */
@@ -43,9 +43,9 @@
         display: flex;
         align-items: center;
         gap: 0.4rem;
-        padding-bottom: 0.7rem;
-        margin-bottom: 0.7rem;
-        border-bottom: solid 1px #F5A201;
+        padding-bottom: 0.6rem;
+        margin-bottom: 0.5rem;
+        border-bottom: solid 1px #c1eef9;
     }
 
     /* Mobile logo */
